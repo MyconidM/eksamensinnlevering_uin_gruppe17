@@ -1,6 +1,9 @@
 import Main from "./Main";
 
 export default function Dashboard () {
-    <Main/>
- return 
+ return (
+    <div>
+        <h1></h1>
+    </div>
+ )
 }
