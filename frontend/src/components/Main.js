@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Search from './Search';
 import Favorites from './favorites';
 import GameCard from './GameCard';
+import Results from "./Results";
 
 export default function Main(){
 const [search, setSearch] = useState('last')
@@ -37,6 +38,7 @@ const [search, setSearch] = useState('last')
             <Route path="/" index element={Main} />
             <Route exact path='/favorites' Component={Favorites} />
         </Routes>
+        <Results gameInfo={gameInfo} />
       </div>
     </Router>
   );

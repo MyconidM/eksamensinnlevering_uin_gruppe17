@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Results from "./Results"
 
 export default function Search( item){
-  const [search, setSearch] = useState('last+of+us')
+  const [search, setSearch] = useState('')
   const [gameInfo, setGameInfo] = useState([]);
   let slug = search.split(' ').join('-').toLowerCase()
     
