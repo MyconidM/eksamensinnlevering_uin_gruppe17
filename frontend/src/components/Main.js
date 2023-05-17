@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Search from './Search';
 import Favorites from './favorites';
-import GameCard from './GameCard';
 import Results from "./Results";
 
 export default function Main(){
 const [search, setSearch] = useState('last')
+
+const [gameInfo, setGameInfo] = useState([]);
       
     async function fetchNewestGames() {
       const apiKey = '834628e421154a1e8191857d89debae3'; 
