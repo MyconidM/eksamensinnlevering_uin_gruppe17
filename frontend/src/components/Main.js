@@ -1,19 +1,44 @@
 import { useEffect, useState } from "react"
-import Dashboard from "./dashboard";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './Nav';
+import Search from './Search';
+import Favorites from './favorites';
+import GameCard from './GameCard';
 
-// https://stackoverflow.com/questions/73761980/rawg-io-api-call-javascript-to-display-in-html
 export default function Main(){
-
-    const [games, setGames] = useState([]);
-    const [gameInfo, setGameInfo] = useState([]);
-    const [search, setSearch] = useState('james+bond')
-
-      return (
-    
-        <>
-        
-            <div id="games"> 
-            </div>
-        </>
-     )
+const [search, setSearch] = useState('last')
+      
+    async function fetchNewestGames() {
+      const apiKey = '834628e421154a1e8191857d89debae3'; 
+      const url = `https://api.rawg.io/api/games?key=${apiKey}&dates=2021-01-01,2023-05-16&ordering=-released&page_size=10`;
+  
+      try {
+      const response = await fetch(url);
+      const data = await response.json();
+  
+      
+      console.log(data.results);
+      } catch (error) {
+      console.log('Error:', error);
       }
+
+      
+  }
+  fetchNewestGames()
+
+  
+
+  return (
+    <Router>
+      <div className='app'>
+        <Nav />
+        <Search search={search} setSearch={setSearch}/>
+        <Routes>
+            <Route path="/" index element={Main} />
+            <Route exact path='/favorites' Component={Favorites} />
+        </Routes>
+      </div>
+    </Router>
+  );
+
+}

@@ -1,36 +1,41 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Results from "./Results"
 
-export default function Search(){
-    const [searchTerm, setSearchTerm] = useState("")
-    const [gameResults, setGameResults] = useState([])
+export default function Search( item){
+  const [search, setSearch] = useState('last+of+us')
+  const [gameInfo, setGameInfo] = useState([]);
+  let slug = search.split(' ').join('-').toLowerCase()
+    
+  async function searchGames() {
+    const apiKey = '834628e421154a1e8191857d89debae3'; 
+    const url = `https://api.rawg.io/api/games?key=${apiKey}&search=${slug}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
   
-    const handleChange = (e) => {
-      setSearchTerm(e.target.value)
+      console.log(data.results);
+      setGameInfo(data.results); // Set the fetched data to gameInfo
+    } catch (error) {
+      console.log('Error:', error);
     }
-  
-    const onSubmit = (e) => {
-      e.preventDefault()
-      let slug = searchTerm.split(' ').join('-').toLowerCase()
-  
-      setGameResults([])
-      fetch(`https://rawg.io/api/games?search=${slug}&key=b6c978869e0a4c758a232a42f2296362`)
-      .then(resp => resp.json())
-      .then(({results}) => {
-        results === undefined ? alert('no games found') : setGameResults(results)
-      })
-      setSearchTerm("")
-    }
-  
-    return (
-      <div className="game-search">
-        <h1>Game Search</h1>
-          <form onSubmit={onSubmit}>
-            <input type="text" value={searchTerm} onChange={handleChange}/>
-            <br></br>
-            <input type="submit"/>
-          </form>
-          <Results gameResults={gameResults} />
-      </div>
+  }
+
+useEffect(() => {
+  if (search.length >= 3) {
+ searchGames();
+}
+
+}, [search]);
+
+return (
+      <div className="col col-sm-4 serch">
+                <input className="form-control mt-2"
+                    type="search"
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    placeholder="Søk på spill...">
+                </input>
+            </div>
     );
 }
