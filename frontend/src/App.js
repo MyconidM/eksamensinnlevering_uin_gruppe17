@@ -4,12 +4,12 @@ import './css/main.css'
 import { useEffect, useState } from "react"
 import Favorites from './components/favorites';
 import Layout from "./components/Layout";
-import Main from './components/Main';
+import Dashboard from './components/dashboard';
+import GameShop from './components/gameshop';
+import MyGames from './components/mygames';
 import Singlegame from './components/Singlegame';
 import AppContextProvider from './components/appContext';
-import GameShop from './components/gameshop';
 import Nav from './components/Nav';
-
 
 export default function App(){
     const [search, setSearch] = useState('')
@@ -57,18 +57,19 @@ export default function App(){
 
   return (
       <BrowserRouter>
-        <AppContextProvider>
-            <Nav />
-          <Routes>
-              <Route element={<Layout/>}>
-                  <Route path='/' element={<Dashboard/>} />
-                  <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
-                  <Route path='/mygames' element={<MyGames />} />
-                  <Route path='/favorites' element={<Favorites />}/>
-                  <Route path='/game/:id' element={<Singlegame />}/>
-              </Route>
-          </Routes>
+      <AppContextProvider>
+        <Nav />
+        <Routes>
+            <Route element={<Layout />}>
+                <Route path='/' element={<Dashboard/>} />
+                <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
+                <Route path='/mygames' element={<MyGames />} />
+                <Route path='/favorites' element={<Favorites />}/>
+                <Route path='/game/:id' element={<Singlegame />}/>
+            </Route>
+        </Routes>
         </AppContextProvider>
+
       </BrowserRouter>
      
   );
