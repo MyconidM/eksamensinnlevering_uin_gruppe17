@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Favorites from './favorites';
 import Singlegame from './Singlegame';
+import { useAppContext } from './appContext';
 
 export default function Results({gameInfo}){
     return (
