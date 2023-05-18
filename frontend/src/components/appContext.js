@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext(null);
 
@@ -13,7 +13,7 @@ export const useAppContext = () => {
 }
 
 
-export default function appContextProvider ({children}) {
+export default function AppContextProvider ({children}) {
     const [favorties, setFavorties] = useState([]);
 
 

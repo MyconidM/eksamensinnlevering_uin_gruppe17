@@ -6,7 +6,7 @@ import Favorites from './components/favorites';
 import Layout from "./components/Layout";
 import Main from './components/Main';
 import Singlegame from './components/Singlegame';
-import appContextProvider from './components/appContext';
+import AppContextProvider from './components/appContext';
 
 export default function App(){
     const [search, setSearch] = useState('')
@@ -54,7 +54,7 @@ export default function App(){
 
   return (
       <BrowserRouter>
-        <appContextProvider>
+        <AppContextProvider>
           <Routes>
               <Route element={<Layout search={search} setSearch={setSearch} searchGames={searchGames}/>}>
                   <Route path='/' element={<Main gameInfo={gameInfo}/>} />
@@ -62,7 +62,7 @@ export default function App(){
                   <Route path='/favorites' element={<Favorites />}/>
               </Route>
           </Routes>
-        </appContextProvider>
+        </AppContextProvider>
       </BrowserRouter>
      
   );
