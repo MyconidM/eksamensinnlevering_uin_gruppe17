@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { useEffect, useState } from "react"
 import Favorites from './components/favorites';
@@ -53,18 +53,16 @@ export default function App(){
   
 
   return (
-    <Router >
-      <div className='app'>
+      <BrowserRouter>
         <Routes>
             <Route element={<Layout/>}>
-                <Route index element={<Main search={search} setSearch={setSearch} searchGames={searchGames}/>} />
+                <Route index element={<Main gameInfo={gameInfo}/>} />
                 <Route path='/favorites' element={<Favorites />}/>
-                <Route path='/dashboard' element={<Dashboard gameInfo={gameInfo} />} />
             </Route>
         </Routes>
         
-      </div>
-    </Router>
+      </BrowserRouter>
+     
   );
 
 }
