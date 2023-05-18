@@ -10,9 +10,12 @@ export default function Main({gameInfo}){
 
 
   return (
-      <div>
-        <Results gameInfo={gameInfo} />
-      </div>
+    <section>
+        <div>
+            <Results gameInfo={gameInfo} />
+        </div>
+    </section>
+      
   );
 
 }

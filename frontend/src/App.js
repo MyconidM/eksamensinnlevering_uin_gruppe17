@@ -55,7 +55,7 @@ export default function App(){
   return (
       <BrowserRouter>
         <Routes>
-            <Route element={<Layout/>}>
+            <Route element={<Layout search={search} setSearch={setSearch} searchGames={searchGames}/>}>
                 <Route index element={<Main gameInfo={gameInfo}/>} />
                 <Route path='/favorites' element={<Favorites />}/>
             </Route>
