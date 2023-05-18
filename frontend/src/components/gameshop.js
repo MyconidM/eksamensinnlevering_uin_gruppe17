@@ -1,8 +1,11 @@
 
-export default function Dashboard ({gameInfo}) {
+export default function GameShop ({gameInfo}) {
  return (
-    <div>
-        <Results gameInfo={gameInfo} />
-    </div>
+    <section>
+        <div>
+            <Results gameInfo={gameInfo} />
+        </div>
+    </section>
+    
  )
 }
