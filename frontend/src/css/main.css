@@ -1,13 +1,10 @@
-h1 {
-  color: aqua;
-}
-
 body {
   background-color: #FF69B4;
 }
 
 .game-package {
   color: white;
+  background-color: black;
 }
 
 .game-package {
@@ -18,11 +15,11 @@ body {
 
 .game-item {
   display: flex;
-  width: calc(33.33% - 2rem); /* Three items per row with spacing */
+  width: calc(33.33% - 2rem);
   flex-direction: column;
   align-items: center;
   background-color: #28282B;
-  border: inset #28282B;
+  border: solid #28282B;
   border-radius: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 4rem;
@@ -47,13 +44,13 @@ body {
 @media (max-width: 480px) {
   .game-posters {
     height: 100px;
-    width: 125px;
+    width: 150px;
     margin-right: 1rem;
     margin-left: 1rem;
   }
   .game-item {
     display: flex;
-    width: 150px;
+    width: calc(33.33% - 2rem); /* Three items per row with spacing */
     flex-direction: column;
     align-items: center;
     background-color: #28282B;
@@ -62,10 +59,6 @@ body {
     padding-bottom: 2rem;
     margin-bottom: 4rem;
     margin-top: 2rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .game-name .game-genre {
     margin-right: auto;
     margin-left: auto;
   }
