@@ -12,6 +12,7 @@ export default function Results({gameInfo}){
                 <span>{genre.name}, </span>
               ))}</div>
               <button className='button-favorite'>Add too Favorite</button>
+              <button>Buy</button>
             </div>
           ))}
         </div>
