@@ -8,11 +8,13 @@ export default function Results({gameInfo}){
         <div className='game-package'>
           {gameInfo.map((game) => (
             
-            <div className='game-item' key={game.id}>
-                <img className='game-posters' src={game.background_image}></img>
-              <Link to={'/Singlegame'}><h3 className='game-name'>{game.name}</h3></Link>
-              <p>{game.description}</p>
-              <button onClick={<Favorites game={game}/>}>Add too favorits</button>
+            <div key={game.id}>
+                <img src={game.background_image}></img>
+              <h3>{game.name}</h3>
+              <div>{game.genres.map(genre => (
+                <span>{genre.name}, </span>
+              ))}</div>
+              <button >Add too favorits</button>
             </div>
           ))}
         </div>
