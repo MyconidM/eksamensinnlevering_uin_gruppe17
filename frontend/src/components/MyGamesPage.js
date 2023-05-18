@@ -22,7 +22,7 @@ export default function MyGamesPage(){
       }, []);  
     return (
         <section>
-            <h1>My Games</h1>
+            <h1>My Games-Library</h1>
             <div>
                 <MyGames genreInfo={genreInfo} />
             </div>
