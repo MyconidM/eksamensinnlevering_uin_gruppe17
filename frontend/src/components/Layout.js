@@ -8,7 +8,7 @@ export default function Layout({search, searchGames, setSearch}){
         <div id="container">
           <header>
             <Link to="/">
-                <h1>Game app</h1>
+                <h1>PLAY/HUB</h1>
             </Link>
             <Nav />
             <Search search={search} setSearch={setSearch} searchGames={searchGames}/>

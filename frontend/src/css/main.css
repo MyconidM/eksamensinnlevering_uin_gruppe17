@@ -1,5 +1,5 @@
 body {
-  background-color: #28282B;
+  background-color: black;
   background-image: url("../Images/NikolaiChernichenko-Unsplash.jpg");
   background-size: cover;
   background-position: center center;
@@ -19,7 +19,7 @@ header {
 
 .game-package {
   color: #FDFBF9;
-  background-color: #EDD94C;
+  background-color: #301934;
 }
 
 .game-package {
@@ -41,6 +41,12 @@ header {
   margin-top: 4rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.game-item:hover {
+  transform: scale(1);
+  background-color: #36454F;
+  border-radius: 4rem;
 }
 
 .game-posters {
@@ -80,7 +86,7 @@ ul {
   }
   .game-item {
     display: flex;
-    width: calc(33.33% - 2rem); /* Three items per row with spacing */
+    width: calc(50% - 2rem); /* Three items per row with spacing */
     flex-direction: column;
     align-items: center;
     background-color: #28282B;
