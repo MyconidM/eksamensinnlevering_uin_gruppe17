@@ -7,6 +7,7 @@ import Results from "./components/Results";
 import Layout from "./components/Layout";
 import Main from './components/Main';
 import Dashboard from './components/dashboard';
+import Singlegame from './components/Singlegame';
 
 export default function App(){
     const [search, setSearch] = useState('')
@@ -57,6 +58,7 @@ export default function App(){
         <Routes>
             <Route element={<Layout search={search} setSearch={setSearch} searchGames={searchGames}/>}>
                 <Route path='/' element={<Main gameInfo={gameInfo}/>} />
+                <Route path='/game/:id' element={<Singlegame />}/>
                 <Route path='/favorites' element={<Favorites />}/>
             </Route>
         </Routes>
