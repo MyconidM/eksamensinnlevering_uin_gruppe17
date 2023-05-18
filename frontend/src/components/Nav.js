@@ -4,11 +4,11 @@ export default function Nav(){
     return (
         <nav>
             <ul>
-                <Link to={'./Main'}>
-                    <li>Main</li>
-                </Link>
                 <Link to={'./favorites'}>
                     <li>Favorites</li>
+                </Link>
+                <Link to={'./dashboard'}>
+                    <li>Game store</li>
                 </Link>
             </ul>
         </nav>

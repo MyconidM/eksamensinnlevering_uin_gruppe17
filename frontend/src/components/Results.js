@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export default function Results({gameInfo}){
     return (
         <div>
-          <h2>Search Results</h2>
           {gameInfo.map((game) => (
             <div key={game.id}>
                 <img src={game.background_image}></img>
