@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 export default function Nav(){
     return (
         <nav className="navbar">
+            <Link to="/">
+                <h1>Game app</h1>
+            </Link>
             <ul>
-                <Link to={'./favorites'}>
-                    <li>Favorites</li>
-                </Link>
+            
                 <Link to={'./mygames'}>
                     <li>My Games</li>
                 </Link>
-                <Link to={'./gamestore'}>
+                <Link to={'./favorites'}>
+                    <li>Favorites</li>
+                </Link>
+                <Link to={'./gameshop'}>
                     <li>Game store</li>
                 </Link>
             </ul>
