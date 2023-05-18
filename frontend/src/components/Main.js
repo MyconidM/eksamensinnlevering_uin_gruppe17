@@ -9,13 +9,4 @@ import Layout from "./Layout";
 export default function Main({gameInfo}){
 
 
-  return (
-    <section>
-        <div>
-            <Results gameInfo={gameInfo} />
-        </div>
-    </section>
-      
-  );
-
 }
