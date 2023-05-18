@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Search from './Search';
 import Favorites from './favorites';
 import Results from "./Results";
+import Layout from "./Layout";
 
 export default function Main(){
     const [search, setSearch] = useState('')
@@ -19,14 +20,13 @@ export default function Main(){
         const data = await response.json();
     
         console.log(data.results);
-        setGameInfo(data.results); // Set the fetched data to gameInfo
+        setGameInfo(data.results); 
       } catch (error) {
         console.log('Error:', error);
       }
     }
     
     useEffect(() => {
-        // Fetch top movies when the component mounts
         searchGames();
       }, []);  
     
@@ -51,13 +51,15 @@ export default function Main(){
   
 
   return (
-    <Router>
+    <Router element={<Layout/>}>
       <div className='app'>
         <Nav />
         <Search search={search} setSearch={setSearch} searchGames={searchGames}/>
         <Routes>
-            <Route path="/" index element={Main} />
-            <Route exact path='/favorites' Component={Favorites} />
+            <Route element={<Layout/>}>
+                <Route path="/" index element={Main} />
+                <Route path=':slug' element={<Favorites />}/>
+            </Route>
         </Routes>
         <Results gameInfo={gameInfo} />
       </div>
