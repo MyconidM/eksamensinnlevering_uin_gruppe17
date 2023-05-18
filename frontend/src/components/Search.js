@@ -6,7 +6,7 @@ export default function Search({setSearch, search, searchGames}){
 
 
 return (
-      <div className="col col-sm-4 serch">
+      <div className="col col-sm-4 button-search">
                 <input className="form-control mt-2"
                     type="search"
                     value={search}
