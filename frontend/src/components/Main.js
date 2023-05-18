@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Search from './Search';
 import Favorites from './favorites';
 import Results from "./Results";
+import Singlegame from "./Singlegame";
 
 export default function Main(){
     const [search, setSearch] = useState('')
@@ -58,6 +59,7 @@ export default function Main(){
         <Routes>
             <Route path="/" index element={Main} />
             <Route exact path='/favorites' Component={Favorites} />
+            <Route exact path='/singlegame' Component={Singlegame} />
         </Routes>
         <Results gameInfo={gameInfo} />
       </div>
