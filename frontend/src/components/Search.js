@@ -13,7 +13,7 @@ return (
                     onChange={(event) => setSearch(event.target.value)}
                     placeholder="Søk på spill...">
                 </input>
-                <button type="submit" onClick={searchGames}>Searchz</button> 
+                <button type="submit" onClick={searchGames}>Search</button> 
             </div>
     );
 }
