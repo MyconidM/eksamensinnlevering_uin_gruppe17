@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Results from "./Results";
+import MyGames from "./mygames";
 
-export default function MyGames(){
+export default function MyGamesPage(){
     const [genreInfo, setGenreInfo] = useState([])
     async function GameGenre() {
         const apiKey = '834628e421154a1e8191857d89debae3'; 
@@ -24,7 +24,7 @@ export default function MyGames(){
         <section>
             <h1>My Games</h1>
             <div>
-                <Results genreInfo={genreInfo} />
+                <MyGames genreInfo={genreInfo} />
             </div>
         </section>
      )

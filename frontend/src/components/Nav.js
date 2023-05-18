@@ -8,7 +8,7 @@ export default function Nav(){
             </Link>
             <ul>
             
-                <Link to={'./mygames'}>
+                <Link to={'./mygamespage '}>
                     <li>My Games</li>
                 </Link>
                 <Link to={'./favorites'}>
