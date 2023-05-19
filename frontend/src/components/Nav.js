@@ -7,7 +7,7 @@ export default function Nav(){
             <h1>PLAY/HUB</h1>
         </Link>
             <ul>
-                <Link to={'./mygamespage '}>
+                <Link to={'./mygamespage'}>
                     <li>My Games</li>
                 </Link>
                 <Link to={'./favorites'}>
