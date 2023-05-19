@@ -56,8 +56,11 @@ export default function App(){
       }, []);  
 
     async function fetchNewestGames() {
+      const current = new Date();
+      const date = `${current.getFullYear()}-${current.getMonth()+1}-${current.getDate()}`;
+      console.log(date)
       const apiKey = '834628e421154a1e8191857d89debae3'; 
-      const url = `https://api.rawg.io/api/games?key=${apiKey}&dates=2021-01-01,2023-05-16&ordering=-released&page_size=10`;
+      const url = `https://api.rawg.io/api/games?key=${apiKey}&dates=2021-01-01,${date}&ordering=-released&page_size=10`;
   
       try {
       const response = await fetch(url);

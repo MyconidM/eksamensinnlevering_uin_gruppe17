@@ -1,4 +1,3 @@
-import Main from "./Main";
 import MyGamesPage from "./MyGamesPage";
 import Favorites from "./favorites";
 import GameShop from "./gameshop";

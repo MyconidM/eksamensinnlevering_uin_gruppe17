@@ -28,6 +28,7 @@ export default function SingleGame() {
         <div className='GText'>
           <h2>{game?.name}</h2>
           <p>Genres: {game?.genres?.map(genre => <span>{genre?.name}, </span> )} </p>
+          <p>Released: {game?.released}</p>
           <p>Rating: {game?.rating}</p>
           <p>Playtime: {game?.playtime}</p>
         </div>
