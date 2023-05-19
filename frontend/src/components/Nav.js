@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 export default function Nav(){
     return (
         <nav className="navbar">
-            <Link to="/">
-                <h1>Game app</h1>
-            </Link>
+        <Link to="/">
+            <h1>PLAY/HUB</h1>
+        </Link>
             <ul>
-            
                 <Link to={'./mygamespage '}>
                     <li>My Games</li>
                 </Link>

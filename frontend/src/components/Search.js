@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react"
-import Results from "./Results"
-
 export default function Search({setSearch, search, searchGames}){
   
 
