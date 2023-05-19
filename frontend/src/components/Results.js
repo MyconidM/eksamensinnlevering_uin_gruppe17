@@ -11,8 +11,8 @@ export default function Results({gameInfo}){
               <div className='game-genre'>{game.genres.map(genre => (
                 <span>{genre.name}, </span>
               ))}</div>
-              <button className='button-favorite'>Add too Favorite</button>
-              <button>Buy</button>
+              <button className='button-favorite'>Favorite</button>
+              <button className='button-buy'>Buy</button>
             </div>
           ))}
         </div>

@@ -6,17 +6,17 @@ export default function Nav(){
         <Link to="/">
             <h1>PLAY/HUB</h1>
         </Link>
-            <ul>
+            <div>
                 <Link to={'./mygamespage '}>
-                    <li>My Games</li>
+                    <span>My Games</span>
                 </Link>
                 <Link to={'./favorites'}>
-                    <li>Favorites</li>
+                    <span>Favorites</span>
                 </Link>
                 <Link to={'./gameshop'}>
-                    <li>Game store</li>
+                    <span>Store</span>
                 </Link>
-            </ul>
+            </div>
         </nav>
     )
 }
