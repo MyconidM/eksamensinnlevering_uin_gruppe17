@@ -7,9 +7,10 @@ import Layout from "./components/Layout";
 import Dashboard from './components/dashboard';
 import GameShop from './components/gameshop';
 import MyGamesPage from './components/MyGamesPage';
-import Singlegame from './components/Singlegame';
 import AppContextProvider from './components/appContext';
 import Nav from './components/Nav';
+import SingleGame from './components/Singlegame';
+
 
 
 export default function App(){
@@ -84,7 +85,7 @@ export default function App(){
                 <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
                 <Route path='/MyGamesPage' element={<MyGamesPage genreInfo={genreInfo}/>} />
                 <Route path='/favorites' element={<Favorites />}/>
-                <Route path='/game/:id' element={<Singlegame />}/>
+                <Route path='/game/:id' element={<SingleGame />}/>
             </Route>
         </Routes>
         </AppContextProvider>

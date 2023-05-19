@@ -1,34 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; 
+import axios from 'axios';
 
-export default function Singlegame() {
+//https://www.youtube.com/watch?v=oU2c_02YaME
+export default function SingleGame() {
+  const [game, setGame] = useState({});
   const { id } = useParams();
-  const [game, setGame] = useState(null);
+
+  const apiKey = '834628e421154a1e8191857d89debae3'; 
 
   useEffect(() => {
-    // Fetch game details based on the ID
-    // Example code, replace it with your API call or data retrieval logic
-    fetch(`/api/games/${id}`)
-      .then((response) => response.json())
-      .then((data) => setGame(data));
+    axios.get(
+      `https://api.rawg.io/api/games/${id}?key=${apiKey}`
+    ).then((res) => {
+      setGame(res.data);
+    }).catch((err) => console.log(err))
   }, [id]);
 
-  console.log(game)
+
   return (
-    <div>
-      {game ? (
-        <div>
-          <h2>{game.name}</h2>
-          {game.genres.map(genre => (
-            <p>{genre.name}</p>
-          ))}
-          
-          {/* Additional content here */}
+    <>
+    <h1>Game details</h1>
+    <div className='game-package '>
+        <div className='col-sm- game-posters'>
+          <img src={game?.background_image} alt='#'/>
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+        <div className='col-lg-'>
+          <h2>{game?.name}</h2>
+          <p>{game?.rating}</p>
+          <p>{game?.genres?.name}</p>
+        </div>
     </div>
+    
+    </>
+    
   );
 }
 
