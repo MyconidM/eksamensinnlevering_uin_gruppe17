@@ -3,21 +3,20 @@ import { Link } from "react-router-dom";
 export default function Nav(){
     return (
         <nav className="navbar">
-            <Link to="/">
-                <h1>Game app</h1>
-            </Link>
-            <ul>
-            
-                <Link to={'./mygames'}>
-                    <li>My Games</li>
+        <Link to="/">
+            <h1>PLAY/HUB</h1>
+        </Link>
+            <div>
+                <Link to={'./mygamespage'}>
+                    <span>My Games</span>
                 </Link>
                 <Link to={'./favorites'}>
-                    <li>Favorites</li>
+                    <span>Favorites</span>
                 </Link>
                 <Link to={'./gameshop'}>
-                    <li>Game store</li>
+                    <span>Store</span>
                 </Link>
-            </ul>
+            </div>
         </nav>
     )
 }

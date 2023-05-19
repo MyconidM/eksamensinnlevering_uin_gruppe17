@@ -1,13 +1,25 @@
-h1 {
-  color: aqua;
+body {
+  background-color: black;
+  background-image: url("../Images/NikolaiChernichenko-Unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
 }
 
-body {
-  background-color: #FF69B4;
+h1 {
+  color: #FDFBF9;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  margin-left: 2rem;
 }
 
 .game-package {
-  color: white;
+  color: #FDFBF9;
+  background-color: #301934;
 }
 
 .game-package {
@@ -18,42 +30,67 @@ body {
 
 .game-item {
   display: flex;
-  width: calc(33.33% - 2rem); /* Three items per row with spacing */
+  width: calc(33.33% - 2rem);
   flex-direction: column;
   align-items: center;
   background-color: #28282B;
-  border: inset #28282B;
+  border: outset #28282B;
   border-radius: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 4rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-right: auto;
   margin-left: auto;
 }
 
+.game-item:hover {
+  transform: scale(1);
+  background-color: #36454F;
+  border-radius: 4rem;
+}
+
 .game-posters {
   display: flex;
-  height: 200px;
-  width: 300px;
+  height: 250px;
+  width: 400px;
   padding-top: 2rem;
   object-fit: cover;
   object-position: center center;
 }
 
-.button-buy {
-  padding-top: 1rem;
+.button-favorite {
+  margin-top: 2rem;
 }
 
-@media (max-width: 480px) {
+.button-buy {
+  margin-top: 1rem;
+}
+
+.button-search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+ul {
+  list-style-type: none;
+  width: 6rem;
+}
+
+@media (max-width: 1000px) {
   .game-posters {
     height: 100px;
-    width: 125px;
+    width: 150px;
     margin-right: 1rem;
     margin-left: 1rem;
   }
   .game-item {
     display: flex;
-    width: 150px;
+    width: calc(50% - 2rem); /* Three items per row with spacing */
     flex-direction: column;
     align-items: center;
     background-color: #28282B;
@@ -65,10 +102,6 @@ body {
     margin-right: auto;
     margin-left: auto;
   }
-  .game-name .game-genre {
-    margin-right: auto;
-    margin-left: auto;
-  }
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3MvbWFpbi5zY3NzIiwibWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtBQ0VKOztBRENBO0VBQ0ksWUFBQTtBQ0VKOztBRENBO0VBQ0ksYUFBQTtFQUNBLGVBQUE7RUFDQSx1QkFBQTtBQ0VKOztBRENBO0VBQ0ksYUFBQTtFQUNBLDBCQUFBLEVBQUEscUNBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtBQ0VKOztBRENBO0VBQ0ksYUFBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLDhCQUFBO0FDRUo7O0FEQ0E7RUFDSSxpQkFBQTtBQ0VKOztBREVFO0VBQ0U7SUFDRSxhQUFBO0lBQ0EsWUFBQTtJQUNBLGtCQUFBO0lBQ0EsaUJBQUE7RUNDSjtFREVFO0lBQ0ksYUFBQTtJQUNBLFlBQUE7SUFDQSxzQkFBQTtJQUNBLG1CQUFBO0lBQ0EseUJBQUE7SUFDQSxxQkFBQTtJQUNBLG1CQUFBO0lBQ0Esb0JBQUE7SUFDQSxtQkFBQTtJQUNBLGdCQUFBO0lBQ0Esa0JBQUE7SUFDQSxpQkFBQTtFQ0FOO0VER0U7SUFDSSxrQkFBQTtJQUNBLGlCQUFBO0VDRE47QUFDRiIsImZpbGUiOiJtYWluLmNzcyJ9 */
+/*# sourceMappingURL=main.css.map */

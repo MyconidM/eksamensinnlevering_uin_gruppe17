@@ -5,6 +5,7 @@ import Results from "./Results";
 export default function Favorites(game) {
     const [favorties, setFavorties] = useState([]);
     return (
+        
         <>
         <h1>Favoritter</h1>
         <Results favorties={favorties} />

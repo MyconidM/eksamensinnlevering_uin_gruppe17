@@ -1,6 +1,16 @@
 import React from 'react';
+import { useAppContext } from './appContext';
 
 export default function Results({gameInfo}){
+
+    const {favorties, addToFavorites, removeFromFavorites} = useAppContext();
+
+    console.log('Favorites are '+favorties)
+
+    const favoriteChecker = (id) => {
+        const boolean = favorties.some((game) => game.id === id);
+        return boolean
+    }
     return (
         <div className='game-package'>
           {gameInfo.map((game) => (
@@ -11,7 +21,9 @@ export default function Results({gameInfo}){
               <div className='game-genre'>{game.genres.map(genre => (
                 <span>{genre.name}, </span>
               ))}</div>
-              <button className='button-favorite'>Add too Favorite</button>
+              {favoriteChecker(game.id) ? 
+              <button className='button-favorite' onClick={() => removeFromFavorites(game.id)}>Remove from Favorite</button>
+            : <button className='button-favorite' onClick={() => addToFavorites(game)}>Add too Favorite</button>}
               <button>Buy</button>
             </div>
           ))}

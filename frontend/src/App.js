@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
-import './css/main.css'
+import './css/main.css';
 import { useEffect, useState } from "react"
 import Favorites from './components/favorites';
 import Layout from "./components/Layout";
 import Dashboard from './components/dashboard';
 import GameShop from './components/gameshop';
-import MyGames from './components/mygames';
+import MyGamesPage from './components/MyGamesPage';
 import Singlegame from './components/Singlegame';
 import AppContextProvider from './components/appContext';
 import Nav from './components/Nav';
@@ -14,6 +14,7 @@ import Nav from './components/Nav';
 export default function App(){
     const [search, setSearch] = useState('')
     const [gameInfo, setGameInfo] = useState([]);
+    const [genreInfo, setGenreInfo] = useState([])
     let slug = search.split(' ').join('-').toLowerCase()
       
     async function searchGames() {
@@ -34,7 +35,24 @@ export default function App(){
     useEffect(() => {
         searchGames();
       }, []);  
+      async function GameGenre() {
+        const apiKey = '834628e421154a1e8191857d89debae3'; 
+        const url = `https://api.rawg.io/api/games?key=${apiKey}&genres=indie`;
     
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+      
+          console.log(data.results);
+          setGenreInfo(data.results); 
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      }
+      useEffect(() => {
+        GameGenre();
+      }, []);  
+
     async function fetchNewestGames() {
       const apiKey = '834628e421154a1e8191857d89debae3'; 
       const url = `https://api.rawg.io/api/games?key=${apiKey}&dates=2021-01-01,2023-05-16&ordering=-released&page_size=10`;
@@ -61,9 +79,9 @@ export default function App(){
         <Nav />
         <Routes>
             <Route element={<Layout />}>
-                <Route path='/' element={<Dashboard/>} />
+                <Route path='/' element={<Dashboard gameInfo={gameInfo} genreInfo={genreInfo}/>} />
                 <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
-                <Route path='/mygames' element={<MyGames />} />
+                <Route path='/MyGamesPage' element={<MyGamesPage genreInfo={genreInfo}/>} />
                 <Route path='/favorites' element={<Favorites />}/>
                 <Route path='/game/:id' element={<Singlegame />}/>
             </Route>
