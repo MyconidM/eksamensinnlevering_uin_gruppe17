@@ -80,7 +80,7 @@ export default function App(){
         <Nav />
         <Routes>
             <Route element={<Layout />}>
-                <Route path='/' element={<Dashboard gameInfo={gameInfo} genreInfo={genreInfo}/>} />
+                <Route path='/' element={<Dashboard gameInfo={gameInfo} genreInfo={genreInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
                 <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
                 <Route path='/MyGamesPage' element={<MyGamesPage genreInfo={genreInfo}/>} />
                 <Route path='/favorites' element={<Favorites />}/>
