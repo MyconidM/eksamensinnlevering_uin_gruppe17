@@ -11,6 +11,7 @@ import Singlegame from './components/Singlegame';
 import AppContextProvider from './components/appContext';
 import Nav from './components/Nav';
 
+
 export default function App(){
     const [search, setSearch] = useState('')
     const [gameInfo, setGameInfo] = useState([]);
