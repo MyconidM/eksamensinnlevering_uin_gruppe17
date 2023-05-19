@@ -57,6 +57,12 @@ h2 {
     justify-content: center;
 }
 
+.game-package-single {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left; 
+}
+
 .game-item {
     display: flex;
     width: calc(33.33% - 2rem);
@@ -123,7 +129,6 @@ h1:hover {
 a:link {
   text-decoration: none!important;
 }
-
 
 
 // ----------------------------------------------------------------------------------- //
