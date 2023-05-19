@@ -22,13 +22,14 @@ export default function SingleGame() {
     <>
     <h1>Game details</h1>
     <div className='game-package '>
-        <div className='col-sm- game-posters'>
-          <img src={game?.background_image} alt='#'/>
+        <div className='GImage'>
+          <img src={game?.background_image} alt='#' className='img-thumbnail'/>
         </div>
-        <div className='col-lg-'>
+        <div className='GText'>
           <h2>{game?.name}</h2>
-          <p>{game?.rating}</p>
-          <p>{game?.genres?.name}</p>
+          <p>Genres: {game?.genres?.map(genre => <span>{genre?.name}, </span> )} </p>
+          <p>Rating: {game?.rating}</p>
+          <p>Playtime: {game?.playtime}</p>
         </div>
     </div>
     

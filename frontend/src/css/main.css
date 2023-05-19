@@ -46,6 +46,12 @@ h2 {
   justify-content: center;
 }
 
+.game-package-single {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
 .game-item {
   display: flex;
   width: calc(33.33% - 2rem);
@@ -76,14 +82,24 @@ h2 {
   object-position: center center;
 }
 
-.button-favorite {
-  margin-top: 2rem;
+.imgContainer {
+  display: flex;
+  width: 150px;
+  height: 100px;
+}
+
+.imgContainer img {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+/*.button-favorite {
+    margin-top: 2rem;
 }
 
 .button-buy {
   padding-top: 1rem;
-}
-
+}*/
 .navoptions:hover {
   transform: scale(1);
   background-color: #36454F;
