@@ -7,16 +7,39 @@ body {
     position: absolute;
 }
 
+
 h1 {
   color: #FDFBF9;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-header {
   margin-left: 2rem;
+  margin-right: auto;
+  width: 200px;
+  font-size: 4rem;
+  font-family: 'VT323', monospace;
 }
+
+h2 {
+  color: #FDFBF9;
+  margin-left: 2rem;
+  margin-right: auto;
+  font-size: 2rem;
+  font-family: 'VT323', monospace;
+}
+
+
+//header {
+  //margin-left: 2rem;
+
+//}
+
+.navoptions {
+  color: #FDFBF9;
+  margin-right: 2rem;
+  float: right;
+  font-size: 2rem;
+  font-family: 'VT323', monospace;
+}
+
+
 
 .game-package {
     color: #FDFBF9;
@@ -67,26 +90,67 @@ header {
   margin-top: 1rem;
 }
 
+.navoptions:hover {
+  transform: scale(1.0);
+  background-color: #36454F;
+  border-radius: 4rem;
+}
+
+h1:hover {
+  transform: scale(1.0);
+  background-color: #36454F;
+  border-radius: 4rem;
+}
+
 .button-search {
-  margin-left: auto;
+  display: flex;
+  font-size: 4rem;
+  margin-left: 2rem;
   margin-right: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-search input {
+   width: 12rem;
+   height: 2rem;
 }
 
 a:link {
   text-decoration: none!important;
 }
 
-ul {
-  list-style-type: none;
-  width: 6rem;
-}
 
 
 // ----------------------------------------------------------------------------------- //
 
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1300px) {
+    .game-posters {
+      height: 200px;
+      width: 250px;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      
+    }
+
+    .game-item {
+        display: flex;
+        width: calc(50% - 2rem); /* Three items per row with spacing */
+        flex-direction: column;
+        align-items: center;
+        background-color: #28282B;
+        border: solid #28282B;
+        border-radius: 2rem;
+        padding-bottom: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+  }
+  
+  @media (max-width: 700px) {
     .game-posters {
       height: 100px;
       width: 150px;
@@ -109,5 +173,8 @@ ul {
         margin-left: auto;
       }
 
+      .navoptions {
+        font-size: 1rem;
+      }
+
   }
-  
