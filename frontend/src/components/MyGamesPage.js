@@ -5,7 +5,7 @@ export default function MyGamesPage({genreInfo}){
     
     return (
         <section>
-            <h1>My Games-Library</h1>
+            <h2>LIBRARY</h2>
             <div>
                 <MyGames genreInfo={genreInfo} />
             </div>

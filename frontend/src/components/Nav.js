@@ -8,13 +8,13 @@ export default function Nav(){
         </Link>
             <div>
                 <Link to={'./mygamespage'}>
-                    <span>My Games</span>
+                    <span className="navoptions">MY GAMES</span>
                 </Link>
                 <Link to={'./favorites'}>
-                    <span>Favorites</span>
+                    <span className="navoptions">FAVORITES</span>
                 </Link>
                 <Link to={'./gameshop'}>
-                    <span>Store</span>
+                    <span className="navoptions">STORE</span>
                 </Link>
             </div>
         </nav>
