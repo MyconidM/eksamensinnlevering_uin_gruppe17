@@ -95,7 +95,7 @@ h2 {
     object-fit: cover;
     object-position: center center;
 }
-.GImage {
+// .GImage {
 
 }
 .GText {
@@ -163,7 +163,7 @@ margin-top: 2rem;
 
 // ----------------------------------------------------------------------------------- //
 
-
+// Resizer elementer til "x" størrelse. //
    @media (max-width: 1300px) {
     .game-posters {
       height: 200px;
@@ -175,7 +175,7 @@ margin-top: 2rem;
 
     .game-item {
         display: flex;
-        width: calc(50% - 2rem); /* Three items per row with spacing */
+        width: calc(50% - 2rem);
         flex-direction: column;
         align-items: center;
         background-color: #28282B;
