@@ -12,8 +12,8 @@ export default function Favorites(game) {
     }
     return (
         <section>
-        <h1>Favorites</h1>
-        <div>
+        <h2>Favorites</h2>
+        <div className='game-package'>
         {favorties.length > 0 ? favorties.map((game) => (
             
             <div className='game-item' key={game.id}>
@@ -27,7 +27,7 @@ export default function Favorites(game) {
             : <button className='button-favorite' onClick={() => addToFavorites(game)}>Add too Favorite</button>}
               <button>Buy</button>
             </div>
-          )) : <h2>You don't have any favorites yet!</h2>}
+          )): <h2>You don't have any favorites yet!</h2>}
         </div>
         </section>
     )
