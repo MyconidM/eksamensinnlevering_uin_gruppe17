@@ -5,7 +5,7 @@ export default function MyGamesPage(){
     const [genreInfo, setGenreInfo] = useState([])
     async function GameGenre() {
         const apiKey = '834628e421154a1e8191857d89debae3'; 
-        const url = `https://api.rawg.io/api/games?key=${apiKey}&genres=action`;
+        const url = `https://api.rawg.io/api/games?key=${apiKey}&genres=indie`;
     
         try {
           const response = await fetch(url);
