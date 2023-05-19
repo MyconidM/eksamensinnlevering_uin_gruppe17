@@ -11,10 +11,8 @@ export default function Favorites(game) {
         return boolean
     }
     return (
-
-        
         <section>
-        <h1>Favoritter</h1>
+        <h1>Favorites</h1>
         <div>
         {favorties.length > 0 ? favorties.map((game) => (
             
