@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import Favorites from './favorites';
-import Singlegame from './Singlegame';
 
 export default function Results({gameInfo}){
     return (
@@ -14,7 +11,8 @@ export default function Results({gameInfo}){
               <div className='game-genre'>{game.genres.map(genre => (
                 <span>{genre.name}, </span>
               ))}</div>
-              <button className='button-favorite'>Favorite</button>
+              <button className='button-favorite'>Add too Favorite</button>
+              <button>Buy</button>
             </div>
           ))}
         </div>

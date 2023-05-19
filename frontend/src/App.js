@@ -1,14 +1,15 @@
-import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import './css/main.css';
 import { useEffect, useState } from "react"
 import Favorites from './components/favorites';
-import Results from "./components/Results";
 import Layout from "./components/Layout";
-import Main from './components/Main';
 import Dashboard from './components/dashboard';
+import GameShop from './components/gameshop';
+import MyGamesPage from './components/MyGamesPage';
 import Singlegame from './components/Singlegame';
+import AppContextProvider from './components/appContext';
+import Nav from './components/Nav';
 
 export default function App(){
     const [search, setSearch] = useState('')
@@ -56,14 +57,19 @@ export default function App(){
 
   return (
       <BrowserRouter>
+      <AppContextProvider>
+        <Nav />
         <Routes>
-            <Route element={<Layout search={search} setSearch={setSearch} searchGames={searchGames}/>}>
-                <Route path='/' element={<Main gameInfo={gameInfo}/>} />
-                <Route path='/game/:id' element={<Singlegame />}/>
+            <Route element={<Layout />}>
+                <Route path='/' element={<Dashboard/>} />
+                <Route path='/gameshop' element={<GameShop gameInfo={gameInfo} search={search} setSearch={setSearch} searchGames={searchGames}/>} />
+                <Route path='/MyGamesPage' element={<MyGamesPage />} />
                 <Route path='/favorites' element={<Favorites />}/>
+                <Route path='/game/:id' element={<Singlegame />}/>
             </Route>
         </Routes>
-        
+        </AppContextProvider>
+
       </BrowserRouter>
      
   );

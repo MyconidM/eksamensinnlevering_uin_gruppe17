@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Search from "./Search";
 import Footer from "./Footer";
 
-export default function Layout({search, searchGames, setSearch}){
+export default function Layout(){
     return (
         <div id="container">
           <header>
