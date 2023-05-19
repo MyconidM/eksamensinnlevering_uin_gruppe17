@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"; 
 import axios from 'axios';
 
-
+//https://www.youtube.com/watch?v=oU2c_02YaME
 export default function SingleGame() {
   const [game, setGame] = useState({});
   const { id } = useParams();
