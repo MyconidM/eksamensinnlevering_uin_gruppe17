@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext(null);
-
+//https://www.youtube.com/watch?v=oU2c_02YaME&t=2342s
 export const useAppContext = () => {
     const context = useContext(AppContext)
 
