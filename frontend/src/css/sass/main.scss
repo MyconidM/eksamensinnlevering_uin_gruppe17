@@ -4,6 +4,9 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    //fikset et problem hvor siden ikke altid fylte hele vinduet, 
+    //og lagde en svart bar på høyre side
+    //https://www.freecodecamp.org/news/how-to-center-an-absolute-positioned-element/
     position: absolute;
     left: 0;
     right: 0;
@@ -87,13 +90,13 @@ h2 {
     object-position: center center;
 }
 
-.button-favorite {
+/*.button-favorite {
     margin-top: 2rem;
 }
 
 .button-buy {
-  margin-top: 1rem;
-}
+  padding-top: 1rem;
+}*/
 
 .navoptions:hover {
   transform: scale(1.0);
@@ -124,6 +127,23 @@ a:link {
   text-decoration: none!important;
 }
 
+//hjelp med footer justering
+//https://stackoverflow.com/questions/57531348/how-to-make-footer-align-to-center-in-nested-component-scenario-in-react
+.footer {
+  
+left:0;
+bottom:0;
+right:0;
+color: #FDFBF9;
+text-align: center;
+margin-bottom: 2rem;
+margin-top: 2rem;
+}
+
+.footeritem {
+  color: #FDFBF9;
+  align-content: center;
+}
 
 
 // ----------------------------------------------------------------------------------- //
