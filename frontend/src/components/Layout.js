@@ -7,7 +7,11 @@ export default function Layout(){
     return (
         <div id="container">
           <header>
-            
+            <Link to="/">
+                <h1>PLAY/HUB</h1>
+            </Link>
+            <Nav />
+            <Search search={search} setSearch={setSearch} searchGames={searchGames}/>
           </header>
           <main>
             <Outlet />
