@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function MyGames({genreInfo}){
+
+    
+
     return (
         <div className='game-package'>
           {genreInfo.map((game) => (

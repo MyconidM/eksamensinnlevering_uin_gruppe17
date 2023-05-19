@@ -17,12 +17,23 @@ export default function AppContextProvider ({children}) {
     const [favorties, setFavorties] = useState([]);
 
 
-    const addToFavorites = () => {
+    const addToFavorites = (game) => {
+        
+            const oldFavorites = [...favorties];
 
+            const newFavorites = oldFavorites.concat(game);
+
+            setFavorties(newFavorites);
+        
+        
     }
 
     const removeFromFavorites = (id) => {
+        const oldFavorites = [...favorties];
 
+        const newFavorites = oldFavorites.filter((game) => game.id !== id);
+
+        setFavorties(newFavorites)
     }
 
 
